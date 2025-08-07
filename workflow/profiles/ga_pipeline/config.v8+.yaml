@@ -1,0 +1,151 @@
+executor: slurm
+
+default-resources:
+  mem_mb: 10000
+  runtime: 180
+  cpus_per_task: 4
+  slurm_partition: "standard"
+  slurm_account: "kouyos.virology.uzh"
+  output: "logs/{rule}/{jobid}.out"
+  error: "logs/{rule}/{jobid}.err"
+  #slurm_extra: "'--qos=long --mail-type=BEGIN,END,FAIL --mail-user=sara.schuetz@uzh.ch'"
+
+jobs: 10
+printshellcmds: True
+rerun-incomplete: True
+keep-going: True
+keep-incomplete: FALSE
+restart-times: 3
+use-conda: True
+conda-frontend: mamba
+
+set-resources:
+
+
+  fastp:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  fastqc:
+    cpus_per_task: 8
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  multiqc:
+    cpus_per_task: 8
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  spades:
+    cpus_per_task: 16
+    mem_mb: 30000 * attempt
+    runtime: 120 * attempt
+
+
+  quast:
+    cpus_per_task: 8
+    mem_mb: 10000 * attempt
+    runtime: 30 * attempt
+
+  prokka:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 30 * attempt
+
+
+  refg_prokka:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 30 * attempt
+
+
+  emapper:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 300 * attempt
+
+
+  spatyper:
+    cpus_per_task: 8
+    mem_mb: 10000 * attempt
+    runtime: 30 * attempt
+
+
+  pirate:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  fasttree:
+    cpus_per_task: 8
+    mem_mb: 10000 * attempt
+    runtime: 30 * attempt
+
+  iqtree:
+    cpus_per_task: 8
+    mem_mb: 10000 * attempt
+    runtime: 30 * attempt
+
+  snippy:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  snippy-core:  
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  anvi-gen-contigs-database:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  anvi-import-functions: 
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  anvi-run-hmms:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  anvi-gen-genomes-storage:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  anvi-pan-genome:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  anvi-compute-genome-similarity:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+
+  bakta:
+    cpus_per_task: 8
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt
+
+  chewbbaca_allele_call:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt 
+
+
+align_reads_to_reference:
+    cpus_per_task: 16
+    mem_mb: 20000 * attempt
+    runtime: 120 * attempt 

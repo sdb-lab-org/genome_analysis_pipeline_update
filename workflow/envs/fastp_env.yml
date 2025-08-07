@@ -1,0 +1,20 @@
+name: fastp_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - nodefaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - fastp=1.0.1=heae3180_0
+  - isa-l=2.31.1=hb9d3cd8_1
+  - libdeflate=1.22=hb9d3cd8_0
+  - libgcc=14.2.0=h767d61c_2
+  - libgcc-ng=14.2.0=h69a702a_2
+  - libgomp=14.2.0=h767d61c_2
+  - libstdcxx=14.2.0=h8f9b012_2
+  - libstdcxx-ng=14.2.0=h4852527_2
+  - libzlib=1.2.13=h4ab18f5_6
+  - zlib=1.2.13=h4ab18f5_6
+prefix: /home/saschuet/data/saschuet/conda/envs/fastp_env

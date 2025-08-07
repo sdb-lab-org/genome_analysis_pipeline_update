@@ -1,0 +1,49 @@
+########################################
+## Configurations                     ##
+########################################
+
+# Define samples:
+samples:
+  - sample
+genomes:                        # add [] if you want to add additional genomes to analyse
+  - genome
+refg: 
+  - reference
+
+# Define additional rules to execute:
+run:
+  emapper_kegganog: false       # if you want to run eggnog-mapper and KEGG annotation
+  snippy: true                  # if you want to run snippy
+  snippy_vcf_heatmap: false     # option: true if you want to generate a heatmap from snippy-core vcf file
+  gwas: false                   # if you want to run GWAS analysis 
+  anvio: false                  # if you want to run anvio 
+  cgmlst: false                 # if you want to run cgmlst analysis
+  filter_genes_of_interest: false  # if you want to filter genes of interest
+
+# Define the gene of interest:
+genes_of_interest:
+  - {gene}
+
+# Define the directories:
+output_dir: output/
+working_dir: inputs/  
+database_dir: /path_to/database/
+project_dir: /path_to/project_name
+project_name: project_name
+cgmlst_schema: /path_to/database/cgmlst_allele_folder
+
+# Define annotator (default prokka, other options: bakta)
+annotator: prokka
+
+# Define assembler (default spades, other options: unicycler)
+assembler: spades
+
+# Define parameters for specific tools: 
+refs:
+  adapters: inputs/adapters/adapters.fa
+
+fastp:
+  phread_quality: 20      # Phred+33 score
+  cut_window_size: 4      # 4bp sliding window
+  cut_mean_quality: 15    # Trim when window average < 20
+  length_required: 36     # Discard reads shorter than 50 bp
