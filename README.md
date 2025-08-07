@@ -76,7 +76,7 @@ Note: Only SNPs located in annotated genes are considered.
 
 1. Clone this git repository
    ```bash
-   git clone https://github.com/sdb-lab-org/genome_analysis_pipeline_update
+   git clone https://github.com/sdb-lab-org/genome_analysis_pipeline_update.git
    ```
    
 2. If the conda environments are not installed on your computer, install using `conda env create -f <environment>.yml` command. The environment files are in `workflow/envs` directory.
