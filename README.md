@@ -22,8 +22,7 @@ The Snakemake pipeline performs the following steps (by default/optional):
    	  
 **Pangenome Analysis**
 - `pirate`: Runs [PIRATE](https://github.com/SionBayliss/PIRATE) for pangenome analysis, identifying core and accessory genes across multiple genomes (default).
-- `iqtree`: Generates a tree out of the core SNP alignment using [IQ-TREE](http://www.iqtree.org) (default)
-- `snp-dists`: Calculates pairwise nucleotide differences from the core gene-by-gene alignment using [snp-dists](https://github.com/tseemann/snp-dists) (default).
+- `iqtree`: Generates a tree out of the core alignment using [IQ-TREE](http://www.iqtree.org) (default)
 - `anvio`: Runs [Anvi’o](https://anvio.org) pangenomic analysis and creates databases for a ringplot (optional) (-->see some solutions). 
   
 **Variant Calling and Visualization**
@@ -37,8 +36,8 @@ The Snakemake pipeline performs the following steps (by default/optional):
    
 **Typing**
 - `spa_typing`: Uses [spaTyper](https://github.com/medvir/spaTyper) to determine spa types from the assembled contigs for characterizing Staphylococcus aureus strains (default).
-- `mlst`: Uses [mlst]([https://github.com/tseemann/mlst)]) to determine the MLST types from the assembled contigs (default).
-- `chewbacca`: Uses [chewBBACA](https://github.com/B-UMMI/chewBBACA) to determine the cgMLST of the assembled contigs--> see soem solutions (optional).
+- `mlst`: Uses [mlst](https://github.com/tseemann/mlst) to determine the MLST types from the assembled contigs (default).
+- `chewbacca`: Uses [chewBBACA](https://github.com/B-UMMI/chewBBACA) to determine the cgMLST of the assembled contigs--> see some solutions (optional).
 
 **Filtering for genes of interest (optional) -->genes must be annotated in your reference genome (e.g., gene="tpiA")**
 - `pirate_genes_of_interest`: Extracts the genes specified in the config file (genes_of_interest) from the PIRATE output and generates a presence/absence table across all sample.
