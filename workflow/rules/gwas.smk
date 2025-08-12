@@ -42,5 +42,5 @@ rule phylogeny_distance:
     conda:
         "pyseer_env"  
     shell:
-        "python scripts/phylogeny_distance.py {input.tree} > {output.tsv}"
+        "python workflow/scripts/phylogeny_distance.py {input.tree} > {output.tsv}"
 
