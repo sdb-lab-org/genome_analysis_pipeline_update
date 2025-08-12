@@ -62,5 +62,5 @@ rule snp_genes_of_interest:
     shell:
         """
         mkdir -p {params.output_dir}
-        Rscript scripts/snptab2snp_matrix.R {input.snptab} "{params.genes}" {output.matrix}
+        Rscript workflow/scripts/snptab2snp_matrix.R {input.snptab} "{params.genes}" {output.matrix}
         """
