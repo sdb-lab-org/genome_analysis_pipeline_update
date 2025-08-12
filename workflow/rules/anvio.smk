@@ -22,7 +22,7 @@ rule parse_gff:
         "parser_env"
     shell:
         "mkdir -p {params.anvio_dir}; "
-        "python scripts/gff_parser.py {input.gff} "
+        "python workflow/scripts/gff_parser.py {input.gff} "
         "--gene-calls {output.calls} "
         "--annotation {output.annot}; "
 
