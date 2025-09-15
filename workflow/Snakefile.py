@@ -7,7 +7,7 @@
 ########################################
 
 '''
-snakemake -s workflow/Snakefile.py --workflow-profile workflow/profiles/ga_pipeline/ -n
+snakemake -s workflow/Snakefile.py --workflow-profile workflow/profiles/ga_pipeline -n
 snakemake -s workflow/Snakefile.py --profile workflow/profiles/default -n
 '''
 
@@ -145,6 +145,7 @@ ANNOTATION_COPY_DEC_GFF         = expand(OUTPUT_DIR + "08_temp/temp_decorated_gf
 PANGENOME_PIRATE                = [OUTPUT_DIR + "03_pangenome/pirate/core_alignment.fasta"]
 PANGENOME_TREE                  = [OUTPUT_DIR + "03_pangenome/pirate/core_alignment.fasta.treefile"]
 PANGENOME_CORE_GENES_DISTANCE   = [OUTPUT_DIR + "03_pangenome/pirate/core_gene_snp_distances.tsv"]
+PANGENOME_PIRATE_OLD_LOCUSTAG   = [OUTPUT_DIR + "03_pangenome/pirate/PIRATE.gene_families.ordered_prevlocustag.tsv"]
 
 # Typing
 TYPING_MLST                     = [OUTPUT_DIR + "06_typing/mlst/mlst.tsv"]
@@ -212,6 +213,7 @@ rule all:
         PANGENOME_PIRATE,
         PANGENOME_TREE, 
         PANGENOME_CORE_GENES_DISTANCE, 
+        PANGENOME_PIRATE_OLD_LOCUSTAG,
         TYPING_MLST,
         TYPING_SPATYPER,
         ### Optional outputs depending on config cgmlst = true 
