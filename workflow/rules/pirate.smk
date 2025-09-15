@@ -25,6 +25,24 @@ rule pirate:
         "-a "
         "-r; "
 
+
+
+rule pirate_prevlocustag:
+    input:
+        gene_families = OUTPUT_DIR + "03_pangenome/pirate/PIRATE.gene_families.ordered.tsv"
+    output:
+        gene_families_prev = OUTPUT_DIR + "03_pangenome/pirate/PIRATE.gene_families.ordered_prevlocustag.tsv"
+    params:
+        modified_gffs = OUTPUT_DIR + "03_pangenome/pirate/modified_gffs/"
+    conda:
+        "pirate_env"   
+    shell:
+        "perl workflow/scripts/subsample_outputs.pl "
+        "-i {input.gene_families} "
+        "-g {params.modified_gffs} "
+        "-o {output.gene_families_prev} "
+        "--field prev_locus;"
+
 rule tree_pirate:
     input:
         aln                     = rules.pirate.output.alignment_fasta
