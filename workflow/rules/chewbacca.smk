@@ -12,7 +12,7 @@ rule chewbbaca_prep_schema:
     shell:
         "rm -rf {params.output_dir}; " 
         "chewBBACA.py PrepExternalSchema "
-        "-g {input.schema_dir} "
+        "-i {input.schema_dir} "
         "-o {params.output_dir}; "
         "touch {output.prepared_schema}; "
 
